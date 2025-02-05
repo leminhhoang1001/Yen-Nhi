@@ -61,7 +61,7 @@ body {
     font-size: 40px;
     font-family: "Protest Revolution";
     font-weight: 500;
-    padding: 30px;
+    padding: 10px;
 }
 
 .main {
@@ -92,10 +92,10 @@ body {
 .confess_content {
     line-height: 1.5;
     font-family: "Dancing Script";
-    font-size: 21px;
+    font-size: 23px;
     font-weight: 500;
     letter-spacing: 2px;
-    word-spacing: 3px;
+    word-spacing: 4px;
 }
 
 .poem_content {
@@ -175,7 +175,7 @@ body {
     justify-content: space-between;
     color: beige;
     align-items: center;
-    min-height: 280px;
+    min-height: 200px;
     flex-direction: row;
 }
 
@@ -189,10 +189,20 @@ body {
     display: block;
 }
 
+.info p {
+    margin: 10px;
+    position: relative;
+    font-family: "Protest Revolution";
+    font-size: 18px;
+    width: fit-content;
+    word-spacing: 5px;
+    letter-spacing: 2px;
+}
+
 .siso p {
     margin: 2px;
     position: relative;
-    bottom: 60px;
+    bottom: 20px;
     left: 0px;
     font-family: "Grape Nuts";
     font-size: 22px;
