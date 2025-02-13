@@ -211,7 +211,6 @@ body {
 }
 
 .media {
-    display: flex;
     position: relative;
     gap: 10px;
 }
@@ -220,14 +219,25 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 60%;
     /* align-items: center;
     justify-content: center; */
 }
+
+.video h1{
+    grid-area: title;
+}
+.video #video-camping_01{
+    grid-area: video01;
+}
+.video #video-camping_02{
+    grid-area: video02;
+}
+
 .video {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
+    display: grid;
+    grid-template-areas: 
+                        "title title"
+                        "video01 video02";
     gap: 10px;
     /* align-items: center;
     justify-content: center; */
@@ -246,15 +256,13 @@ body {
 #album-3 .trip_pic:nth-child(4) {
     grid-area: pic4;
 }
-#album-3 .trip_pic:nth-child(5) {
-    grid-area: pic5;
-}
+
 #album-3 {
     display: grid;
     grid-template-areas: 
-                    "pic1 pic1 pic1 pic1"
-                    "pic2 pic3 pic4 pic5";
-    gap: 15px;
+                    "pic1 pic1 pic1"
+                    "pic2 pic3 pic4";
+    gap: 20px;
     position: relative;
     margin-top: 10px;
 }
@@ -272,7 +280,7 @@ body {
 .video_content video {
     /* position: relative;
     display: block; */
-    width: 100%;
+    width: 60%;
     border-radius: 20px;
 }
 .feedback-form{
@@ -344,7 +352,6 @@ body {
     width: fit-content;
 }
 
-.siso,
 .info {
     height: 100%;
     display: block;
@@ -364,17 +371,4 @@ body {
     margin-left: 30%;
     width: max-content;
     line-height: 1.6;
-}
-.siso{
-    bottom: 40px;
-    right: 1%;
-    position: relative;
-}
-.siso p {
-    margin: 2px;
-    position: relative;
-    left: 0px;
-    font-family: "Grape Nuts";
-    font-size: 22px;
-    width: fit-content;
 }
