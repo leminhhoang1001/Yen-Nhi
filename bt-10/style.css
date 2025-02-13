@@ -12,9 +12,12 @@
 }
 
 body {
-    background: url(assets/pics/web-background-01.png);
+    background: url(assets/pics/mt-bg_03.png);
     background-size: cover;
-    padding: 5px 30px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    padding: 5px 20px;
 }
 
 .wrapp {
@@ -25,21 +28,35 @@ body {
 
 .header,
 .footer {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    backdrop-filter: blur(1px);
+    box-shadow: 3px 13px 13px 3px rgba(0, 0, 0, 0.479);
+    margin: 0 0 30px 0;
+    min-height: 50px;
     text-align: center;
-    background-image: url(./assets/pics/chalkboard_bg.png);
+    border-radius: 25px;
+}
+
+.header::before,
+.footer::before {
+    content: "";
+    background-image: url(./assets/pics/background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    min-height: 50px;
-    display: flex;
-    position: relative;
-    justify-content: center;
-    padding: 10px;
-    border: 15px solid rgb(66, 21, 3);
-    backdrop-filter: blur(5px);
-    box-shadow: 3px 13px 13px 3px rgba(0, 0, 0, 0.479);
-    margin: 0 0 30px 0;
-    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 80%;
+    z-index: -1;
+    border-radius: 25px;
 }
 
 .header_logo {
@@ -53,127 +70,271 @@ body {
     position: relative;
     object-fit: contain;
     height: auto;
-    width: 30%;
+    width: 25%;
 }
 
-.header_title {
-    color: azure;
-    font-size: 40px;
+
+/* .header_title {
+    color: rgb(249, 255, 238);
+    font-size: 35px;
     font-family: "Protest Revolution";
     font-weight: 500;
     padding: 10px;
+} */
+
+.banner {
+    position: relative;
+    display: block;
+    justify-content: center;
+    padding: 20px;
+    backdrop-filter: blur(1px);
+    box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.479);
+    margin: 0 0 30px 0;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.banner img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 50%;
+    object-position: 0 50%;
+    border-radius: 25px;
+    margin-top: 20px;
+}
+
+.banner_slogan {
+    color: rgb(68, 104, 1);
+    font-size: 50px;
+    font-family: "Protest Revolution";
+    font-weight: 500;
+    padding: 10px;
+    margin-top: 20px;
 }
 
 .main {
-    background-image: url(assets/pics/main_bg.png);
-    background-size: contain;
-    padding: 20px 20px 20px 150px;
+    background-color: rgba(255, 255, 255, 0.123);
+    backdrop-filter: blur(5px);
+    padding: 20px;
     min-height: 1240px;
     background-repeat: repeat-y;
-    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.479);
+    box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.479);
+    border-radius: 25px;
     margin: 0 0 30px 0;
     position: relative;
 }
 
 .main_content {
-    backdrop-filter: blur(5px);
-    background-color: rgba(135, 139, 172, 0.075);
+    backdrop-filter: blur(15px);
+    background-color: rgba(153, 180, 157, 0.247);
     padding: 20px;
     margin-bottom: 20px;
-    border-radius: 5%;
+    border-radius: 25px;
 }
 
 .title {
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 35px;
+    color: rgb(7, 29, 1);
+}
+
+.trip {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.album , .schedule {
+    margin-bottom: 0;
+    position: relative;
+}
+
+#album-1 .trip_pic:nth-child(1) {
+    grid-area: pic1;
+}
+
+#album-1 .trip_pic:nth-child(2) {
+    grid-area: pic2;
+}
+
+#album-1 .trip_pic:nth-child(3) {
+    grid-area: pic3;
+}
+
+#album-1 {
+    display: grid;
+    grid-template-areas: "pic1 pic1" "pic2 pic3";
+    gap: 10px;
+}
+
+#album-2 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 10px;
+    justify-content: center;
+}
+
+.album img {
+    display: block;
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 20px;
+}
+.schedule h2{
+    padding: 20px;
+    font-family: "Inter";
+    font-size: 30px;
+    color: rgb(7, 29, 1);
+}
+.schedule li{
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: rgb(16, 56, 5);
 }
 
 .confess_content {
+    text-indent: 20px;
     line-height: 1.5;
     font-family: "Dancing Script";
     font-size: 23px;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 2px;
     word-spacing: 4px;
-}
-
-.poem_content {
-    display: flex;
-    align-items: center;
-}
-
-.poem_sub_content {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-
-.poem_title {
-    font-family: "Newsreader";
-    font-size: 23px;
-}
-
-.poem_sub_content p {
-    font-family: "Inter";
-    font-size: 19px;
+    color: rgb(16, 56, 5);
 }
 
 .media {
     display: flex;
     position: relative;
+    gap: 10px;
 }
 
-.photo,
-.video {
-    width: 50%;
+.photo{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: 10px;
-}
-
-.photo_content {
-    display: grid;
-    grid-template-columns: auto auto;
     gap: 10px;
-    position: relative;
+    width: 60%;
+    /* align-items: center;
+    justify-content: center; */
 }
-
-.pic_wrapp {
+.video {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    flex: 1;
+    gap: 10px;
+    /* align-items: center;
+    justify-content: center; */
+}
+#album-3 .trip_pic:nth-child(1) {
+    grid-area: pic1;
 }
 
-.photo_content img {
-    display: block;
-    object-fit: contain;
-    max-width: 100%;
-    max-height: 100%;
+#album-3 .trip_pic:nth-child(2) {
+    grid-area: pic2;
+}
+
+#album-3 .trip_pic:nth-child(3) {
+    grid-area: pic3;
+}
+#album-3 .trip_pic:nth-child(4) {
+    grid-area: pic4;
+}
+#album-3 .trip_pic:nth-child(5) {
+    grid-area: pic5;
+}
+#album-3 {
+    display: grid;
+    grid-template-areas: 
+                    "pic1 pic1 pic1 pic1"
+                    "pic2 pic3 pic4 pic5";
+    gap: 15px;
+    position: relative;
+    margin-top: 10px;
 }
 
 .video_content {
     display: flex;
-    position: relative;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
+    flex-grow: 1;
+    margin-top: 10px;
+    padding: 10px 0;
+
 }
 
-.video_content iframe {
+.video_content video {
+    /* position: relative;
+    display: block; */
+    width: 100%;
+    border-radius: 20px;
+}
+.feedback-form{
+    border-radius: 20px;
+    width: 100%;
+}
+.feedback-form label{
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 10%;
+    margin: 5px 10px;
+    font-size: 18px;
+    font-family: "Inter";
+    font-weight: 600;
+    color: rgb(16, 56, 5);
+}
+.feedback-form input, .feedback-form button, .feedback-form textarea{
+    position: relative;
+    width: 30%;
     padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: "Inter";
+    color: rgb(16, 56, 5);
+    box-shadow: 4px 1px 20px 1px rgb(5, 20, 2);
+
 }
 
+.feedback-form textarea{
+    height: 150px;
+    width: 50%;
+    resize: vertical;
+    color: (16, 56, 5);
+}
+.feedback-form button{
+    width: 20%;
+    color: rgb(16, 56, 5);
+    padding-left: 33px;
+    padding-right: 33px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    margin-top: 20px;
+    border-radius: 9px;
+    background: #c6ffa5;
+    border: none;
+    font-weight: 600;    
+    text-align: center;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.feedback-form button:hover{
+    box-shadow: 7px 5px 56px -14px #275a0b;
+}
+.feedback-form button:active{
+    transform: scale(0.97);
+    box-shadow: 7px 5px 56px -10px #275a0b;
+}
 .footer {
     justify-content: space-between;
-    color: beige;
+    color: rgb(240, 255, 212);
     align-items: center;
     min-height: 200px;
     flex-direction: row;
@@ -198,11 +359,20 @@ body {
     word-spacing: 5px;
     letter-spacing: 2px;
 }
-
+.info #member{
+    text-align: start;
+    margin-left: 30%;
+    width: max-content;
+    line-height: 1.6;
+}
+.siso{
+    bottom: 40px;
+    right: 1%;
+    position: relative;
+}
 .siso p {
     margin: 2px;
     position: relative;
-    bottom: 20px;
     left: 0px;
     font-family: "Grape Nuts";
     font-size: 22px;
