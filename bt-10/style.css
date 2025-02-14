@@ -171,7 +171,8 @@ body {
     display: grid;
     grid-template-areas: "pic1 pic1" "pic2 pic3";
     gap: 10px;
-}
+    align-items: center;
+    align-content: center;}
 
 #album-2 {
     display: grid;
@@ -194,11 +195,16 @@ body {
     color: rgb(7, 29, 1);
 }
 .schedule li{
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     font-size: 18px;
     color: rgb(16, 56, 5);
 }
-
+#day-1 li:last-child{
+    margin-bottom: 0;
+}
+#day-2 li{
+    margin-bottom: 29px;
+}
 .confess_content {
     text-indent: 20px;
     line-height: 1.5;
